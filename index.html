@@ -10,31 +10,114 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
-<body class="bgimg container">
-    <div class="top center" id="menubar">
-        <a href="index.html" class="button"><img src="images/logo.png" style="width:70%"></a>
-        <div class="right">
-            <a href="tel:(800)508-2265" class="dark-lime-green button" style="padding-right: 15px"><i class="fas fa-mobile-alt"></i> (800)508-2265</a>
-            <a href="index.html" target="_blank" class="white button" style="padding-right: 13px">HOME</a>
-            <i class="border"></i>
-            <a href="index.html" target="_blank" class="white button">ABOUT US</a>
-            <i class="border"></i>
-            <a href="index.html" target="_blank" class="white button">SERVICES</a>
-            <i class="border"></i>
-            <a href="index.html" target="_blank" class="white button">CONTACT US</a>
+<body style="margin: 0;">
+    <!-- body content -->
+    <div class="container bgimg" id="body-content">
+
+        <div id="topbar">
+            <div class="one-third left" id="logo">
+                <a href="index.html" class="button"><img src="images/logo.png" style="width:70%"></a>
+            </div>
+
+            <div class="two-third right" id="menu">
+                <a href="tel:(800)508-2265" class="dark-lime-green button" style="padding-right: 15px"><i class="fas fa-mobile-alt"></i> (800)508-2265</a>
+                <a href="index.html" target="_blank" class="white button" style="padding-right: 13px">HOME</a>
+                <i class="border"></i>
+                <a href="index.html" target="_blank" class="white button">ABOUT US</a>
+                <i class="border"></i>
+                <a href="index.html" target="_blank" class="white button">SERVICES</a>
+                <i class="border"></i>
+                <a href="index.html" target="_blank" class="white button">CONTACT US</a>
+            </div>
+
+        </div>
+
+        <div class="center" id="bodycontent">
+
+            <div class="one-third left" id="static-text">
+                <h1 class="white">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.</h1>
+                <P class="white" style="font-size: 14px">Etiam ac sondales orcic, id tristique magna. Etiam sit amet lacus eu diam faucibus mattis. Nam convallis lobortis sapien, wt consequat volutpat in.</P>
+                <div id="sumbit">
+                    <button class="button button-bg white">Submit</button>
+                </div>
+            </div>
+
+            <div class="two-third right" id="box">
+                    <div class="container topbox">
+                            <div class="white boxheader text centered">PLEASE SELECT WHAT KIND OF PRODUCTS YOU PREFER 
+                                <div class="dropdown" >
+                                    <button class="dropbtn right"><i class="fas fa-caret-down"></i></button>
+                                        <div class="dropdown-content">
+                                            <a href="#">Link 1</a>
+                                            <a href="#">Link 2</a>
+                                            <a href="#">Link 3</a>
+                                        </div>
+                                </div>
+                            </div>
+                    </div>
+            </div>
         </div>
     </div>
-    
-    <div class="center" id="bodycontent">
-        <div class="one-third statictext" id="left">
+
+    <!-- slider -->
+    <div class="container slider center" id="slider">
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                <img src="images/laptop.png" style="width:100%">
+                </div>
+            
+                <div class="mySlides fade">
+                <img src="images/tablet.png" style="width:100%">
+                </div>
+            
+                <div class="mySlides fade">
+                <img src="images/iphone.png" style="width:100%">
+                </div>
+            
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
             <br>
-            <h class="white"><b>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.</b></h>
-            <P class="white" style="font-size: 14px">Etiam ac sondales orcic, id tristique magna.<br> Etiam sit amet lacus eu diam faucibus mattis. Nam convallis lobortis sapien, wt consequat volutpat in.</P>
-            <br>
-            <button class="button button-bg white">Submit</button>
-        </div>
-        <div class="two-third" id="right">
-        </div>
     </div>
+
+    <!-- footer -->
+    <div id="footer">
+        
+    </div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+</script>
 </body>
 </html>
